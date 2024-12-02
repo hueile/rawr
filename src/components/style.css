@@ -180,3 +180,10 @@ body {
 .upload-card:hover .upload-icon {
     color: #4caf50;
 }
+
+.error-message {
+    color: #f87171; /* Red color for error */
+    font-size: 0.875rem; /* Equivalent to text-sm */
+    margin-top: 0.5rem; /* Spacing between the card and the message */
+    text-align: center;
+}

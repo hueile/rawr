@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 function UploadCard({ onUpload }) {
+    const [error, setError] = useState("");
+
     const handleFileChange = (event) => {
         const file = event.target.files[0];
         if (file) {
+            // Validate file extension
+            if (!file.name.toLowerCase().endsWith(".cr2")) {
+                setError("Only .cr2 files are allowed.");
+                return;
+            }
+            setError(""); // Clear any previous errors
             onUpload(file);
         }
     };
@@ -28,11 +36,12 @@ function UploadCard({ onUpload }) {
                 <input
                     id="upload-input"
                     type="file"
-                    accept="image/*"
+                    accept=".cr2"
                     onChange={handleFileChange}
                     className="hidden" // Hide the input field
                 />
             </label>
+            {error && <p className="error-message">{error}</p>}
         </div>
     );
 }
