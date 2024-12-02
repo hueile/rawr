@@ -7,12 +7,27 @@ import "./style.css";
 function ImageGallery() {
     const [images, setImages] = useState([]);
 
-    useEffect(() => {
-        async function fetchImages() {
+    // Fetch images function
+    const fetchImages = async () => {
+        try {
             const fetchedImages = await getImages();
             setImages(fetchedImages);
+        } catch (error) {
+            console.error("Error fetching images:", error);
         }
+    };
+
+    useEffect(() => {
+        // Initial fetch
         fetchImages();
+
+        // Set up interval for polling every 10 seconds
+        const interval = setInterval(() => {
+            fetchImages();
+        }, 10000);
+
+        // Cleanup interval on component unmount
+        return () => clearInterval(interval);
     }, []);
 
     const handleUpload = async (file) => {
@@ -23,8 +38,7 @@ function ImageGallery() {
                 body: file,
             });
             // Refetch images after upload
-            const updatedImages = await getImages();
-            setImages(updatedImages);
+            fetchImages();
         } catch (error) {
             console.error("Error uploading file:", error);
         }
