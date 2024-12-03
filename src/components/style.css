@@ -22,7 +22,7 @@ body {
     color: white;
     text-align: center;
     padding: 1rem;
-    z-index: 1000; /* Ensures it stays above other elements */
+    z-index: 100; /* Ensures it stays above other elements */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
     font: 1.5rem 'Winter Lemon', sans-serif; /* Custom font and size */
     font-size: 4rem; /* Adjust font size */
@@ -87,7 +87,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 50;
+    z-index: 101;
     pointer-events: none;
 }
 
@@ -220,4 +220,33 @@ body {
 
 .upload-card:hover .upload-icon {
     color: rgba(76, 175, 80, 0.7); /* Slightly transparent icon color on hover */
+}
+
+.falling-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevent interference with user interactions */
+    z-index: -1; /* Place particles behind the content */
+}
+
+.particle {
+    position: absolute;
+    animation: fall linear infinite; /* Falling animation */
+    transform-origin: center center; /* Rotate around the center */
+    border-radius: 4px; /* Optional rounded corners */
+}
+
+/* Falling animation */
+@keyframes fall {
+    from {
+        transform: translateY(-100px) rotate(var(--rotation, 0deg)); /* Start above viewport with rotation */
+        opacity: 1; /* Fully visible at the start */
+    }
+    to {
+        transform: translateY(100vh) rotate(var(--rotation, 0deg)); /* Fall while maintaining rotation */
+        opacity: 0; /* Invisible at the end */
+    }
 }
