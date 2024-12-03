@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/rawr/static/css/main.5b94feec.css",
-    "main.js": "/rawr/static/js/main.13aac517.js",
+    "main.css": "/rawr/static/css/main.a9ccc244.css",
+    "main.js": "/rawr/static/js/main.eb01de8c.js",
     "static/js/453.2b228a38.chunk.js": "/rawr/static/js/453.2b228a38.chunk.js",
     "static/media/Winter Lemon.ttf": "/rawr/static/media/Winter Lemon.8de7f06a395a70edb749.ttf",
+    "static/media/rawr_particle.png": "/rawr/static/media/rawr_particle.267f09bc81e550113f46.png",
     "index.html": "/rawr/index.html",
-    "main.5b94feec.css.map": "/rawr/static/css/main.5b94feec.css.map",
-    "main.13aac517.js.map": "/rawr/static/js/main.13aac517.js.map",
+    "main.a9ccc244.css.map": "/rawr/static/css/main.a9ccc244.css.map",
+    "main.eb01de8c.js.map": "/rawr/static/js/main.eb01de8c.js.map",
     "453.2b228a38.chunk.js.map": "/rawr/static/js/453.2b228a38.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b94feec.css",
-    "static/js/main.13aac517.js"
+    "static/css/main.a9ccc244.css",
+    "static/js/main.eb01de8c.js"
   ]
 }
